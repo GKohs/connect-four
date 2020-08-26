@@ -3,6 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const squares = document.querySelectorAll('.grid div');
+  const gridOfSquares = document.querySelector('.gridOfSquares');
   const result = document.querySelector('#result');
   const displayCurrentPlayer = document.querySelector('#current-player');
 
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // now take the 4 values in earch winningArray & plug them into the squares values
     for (let y = 0; y < winningArrays.length; y++) {
+      // console.log('Hi' + y);
       const square1 = squares[winningArrays[y][0]];
       const square2 = squares[winningArrays[y][1]];
       const square3 = squares[winningArrays[y][2]];
@@ -77,5 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // add an eventListener to each square that will trigger the function on click
-  squares.forEach(square => square.addEventListener('click', checkBoard));
+  // squares.forEach(square => square.addEventListener('click', checkBoard));
+
+  gridOfSquares.addEventListener('click', checkBoard);
 });
