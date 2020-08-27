@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const sum = checkPoints(playerString);
 
       if (sum >= 4) {
+        disableField();
+
         if (playerString === 'player-one') {
           result.innerHTML = 'Player one wins!';
         } else if (playerString === 'player-two') {
@@ -88,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // add an eventListener to the grid that will proof, if someone has won.
   gridOfSquares.addEventListener('click', checkBoard);
+
+  function disableField () {
+    gridOfSquares.style.pointerEvents = 'none';
+  }
 
   function checkPoints (playerString) {
     // proof if there is a row with 4 of a player in one line
