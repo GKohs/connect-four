@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (var i = 0, len = squares.length; i < len; i++) {
     (function (index) {
-      // ad an onclick to each square in your grid
-      squares[i].innerHTML = i;
+      // ad an onclick to each square in your
       squares[i].onclick = function () {
         // if current square is not taken AND
         // (it is the first row OR it is above a taken one)
